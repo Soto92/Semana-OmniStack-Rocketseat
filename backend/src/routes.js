@@ -1,12 +1,9 @@
 const express = require('express');
 const routes = express.Router();
+const DevController = require('./controllers/DevController')
 
-routes.get('/', (req, res) => { 
-    return res.json({ message: `Olá ${req.query.name}` }) 
-});
 
-routes.post('/devs', (req, res) => {
-    return res.json({ ok: true})
-});
+//install insomnia software (test api)
+routes.post('/devs', DevController.store);
 
 module.exports = routes;
